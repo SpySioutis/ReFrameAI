@@ -41,19 +41,21 @@ fi
 
 mkdir -p data/storage
 
-# 4. Start services
+# 4. Start services (inner parens: `&` must not swallow the `cd`)
 echo "Starting backend on ${API_URL} …"
-(cd backend && uv run uvicorn app.main:app --host 127.0.0.1 --port "${BACKEND_PORT}" > ../data/backend.log 2>&1 & echo $! > ../data/backend.pid)
+(cd backend && (uv run uvicorn app.main:app --host 127.0.0.1 --port "${BACKEND_PORT}" > ../data/backend.log 2>&1 & echo $! > ../data/backend.pid))
 echo "Starting frontend on ${APP_URL} …"
-(cd frontend && NEXT_PUBLIC_API_URL="" FRONTEND_PORT="${FRONTEND_PORT}" npm run dev > ../data/frontend.log 2>&1 & echo $! > ../data/frontend.pid)
+(cd frontend && (NEXT_PUBLIC_API_URL="" FRONTEND_PORT="${FRONTEND_PORT}" npm run dev > ../data/frontend.log 2>&1 & echo $! > ../data/frontend.pid))
 
 cleanup() {
   echo ""
   echo "Shutting down…"
   [ -f data/backend.pid ] && kill "$(cat data/backend.pid)" 2>/dev/null || true
   [ -f data/frontend.pid ] && kill "$(cat data/frontend.pid)" 2>/dev/null || true
-  # Also kill child processes spawned by npm
-  pkill -P "$(cat data/frontend.pid 2>/dev/null)" 2>/dev/null || true
+  # Also kill child processes spawned by the wrappers (uv, npm)
+  [ -f data/backend.pid ] && pkill -P "$(cat data/backend.pid)" 2>/dev/null || true
+  [ -f data/frontend.pid ] && pkill -P "$(cat data/frontend.pid)" 2>/dev/null || true
+  sleep 1
   rm -f data/backend.pid data/frontend.pid
   exit 0
 }
