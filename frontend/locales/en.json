@@ -1,0 +1,118 @@
+{
+  "brand": "ReFrameAI",
+  "tagline": "Select it. Describe it. Reimagine it.",
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "settings": "Settings",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "startEditing": "Start Editing"
+  },
+  "hero": {
+    "title": "Your Video. Your Vision. Reimagined by AI.",
+    "subtitle": "Select any object in your video and transform it with the power of generative AI.",
+    "primaryCta": "Start Editing",
+    "secondaryCta": "Explore Features",
+    "badge": "AI video object studio"
+  },
+  "features": {
+    "title": "Everything you need to reimagine video",
+    "select": { "title": "Click to select", "body": "Pause on any frame and click an object. SAM 3.1 segments and tracks it across the video." },
+    "remove": { "title": "Remove anything", "body": "Video inpainting reconstructs the background with temporal consistency — no flicker." },
+    "replace": { "title": "Replace with AI", "body": "Describe the replacement in words. Muse Image generates it; ReFrameAI composites it into every frame." },
+    "agent": { "title": "AI assistant", "body": "Muse Spark turns plain-language instructions into structured editing plans." }
+  },
+  "how": {
+    "title": "How it works",
+    "s1t": "Upload", "s1b": "Drop in an MP4, MOV or WebM video.",
+    "s2t": "Select", "s2b": "Click the object you want to change.",
+    "s3t": "Describe", "s3b": "Tell the AI what to remove, replace or restyle.",
+    "s4t": "Export", "s4b": "Preview side-by-side and export an MP4."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "note": "Indicative pricing — configure plans before launch.",
+    "starter": "Starter",
+    "pro": "Pro",
+    "team": "Team"
+  },
+  "footer": { "rights": "All rights reserved.", "docs": "Docs", "status": "Status" },
+  "auth": {
+    "loginTitle": "Welcome back",
+    "signupTitle": "Create your account",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Log in",
+    "signupBtn": "Sign up",
+    "noAccount": "No account yet?",
+    "hasAccount": "Already have an account?",
+    "error": "Authentication failed. Check your credentials."
+  },
+  "dashboard": {
+    "title": "Projects",
+    "new": "New project",
+    "search": "Search projects…",
+    "empty": "No projects yet. Create one to start editing.",
+    "delete": "Delete",
+    "confirmDelete": "Delete this project? This cannot be undone.",
+    "cancel": "Cancel",
+    "open": "Open",
+    "status": "Status",
+    "modified": "Modified",
+    "uploadVideo": "Upload video"
+  },
+  "editor": {
+    "assistant": "AI Assistant",
+    "askPlaceholder": "Describe the edit, e.g. “Remove the person behind me”…",
+    "send": "Send",
+    "history": "History",
+    "noHistory": "No edits yet.",
+    "object": "Selected object",
+    "noObject": "Click an object in the video to select it.",
+    "operation": "Operation",
+    "remove": "Remove",
+    "replace": "Replace",
+    "restyle": "Restyle",
+    "prompt": "Prompt",
+    "promptPlaceholder": "Replace with a glass bottle of orange juice…",
+    "generate": "Generate",
+    "track": "Track object",
+    "export": "Export",
+    "compare": "Compare",
+    "original": "Original",
+    "result": "Result",
+    "timeline": "Timeline",
+    "frame": "Frame",
+    "providers": "AI providers",
+    "mockWarning": "AI credentials not configured — local preview mode. Segmentation works locally; generative edits need MODEL_API_KEY.",
+    "jobRunning": "Processing…",
+    "jobDone": "Done",
+    "jobFailed": "Failed",
+    "selectHint": "Pause the video, then click the object.",
+    "results": "Results",
+    "noResults": "No results yet."
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "english": "English",
+    "greek": "Ελληνικά",
+    "providers": "AI provider status",
+    "account": "Account",
+    "notConfigured": "Not configured",
+    "ready": "Ready"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "close": "Close",
+    "save": "Save",
+    "languageSwitch": "EN ⇄ EL"
+  }
+}
