@@ -1,0 +1,59 @@
+# ReFrameAI .gitignore
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Node / Next.js
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+*.tsbuildinfo
+.next/
+
+# Data / media (never commit user videos or generated artifacts)
+data/
+storage/
+*.mp4
+*.mov
+*.webm
+*.mkv
+!**/fixtures/*.mp4
+backend/data/
+
+# Models / weights
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+weights/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs / temp
+*.log
+tmp/
+temp/
+.tmp/

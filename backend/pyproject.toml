@@ -1,0 +1,61 @@
+[project]
+name = "reframeai-backend"
+version = "0.1.0"
+description = "ReFrameAI backend — FastAPI video object removal & replacement studio"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "sqlalchemy>=2.0",
+  "pydantic>=2.7",
+  "pydantic-settings>=2.3",
+  "python-jose[cryptography]>=3.3",
+  "bcrypt>=4.1",
+  "httpx>=0.27",
+  "opencv-python-headless>=4.9",
+  "numpy>=1.26",
+  "Pillow>=10.3",
+  "python-multipart>=0.0.9",
+  "email-validator>=2.0",
+  "alembic>=1.13",
+  "psycopg[binary]>=3.1",
+  "boto3>=1.34",
+  "sse-starlette>=2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+  "pytest-asyncio>=0.23",
+  "ruff>=0.5",
+  "mypy>=1.10",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+ignore = ["B008"]  # FastAPI Depends() in defaults is idiomatic
+
+[tool.ruff.lint.per-file-ignores]
+"app/services/*" = ["BLE001"]
+"app/video/*" = ["BLE001", "S110"]
+"app/api/*" = ["BLE001"]
+"app/ai/*" = ["BLE001"]
+"app/workers/*" = ["BLE001"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
